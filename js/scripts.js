@@ -5,20 +5,30 @@
 // Count by: 5
 // Output: 5, 10, 15, 20, 25, 30
 
-userarray =[]
-forEach(function(input) {
-  userarray.push(input * 5);
-});
-return userarray;
+
+
 
 $(document).ready(function() {
   $("#formOne").submit(function(event) {
+    let items = ["input"];
+    userarray =[];
+    items.forEach(function(input) {
+      let numbers = $(parseInt("input#" + input).val());
+      userarray.push(numbers * 5);
+      $("#output").append("<li>" + userarray + "</li>");
+    });
     
-  $("#output").append("<li>" + userarray + "</li>");
-  }
+    event.preventDefault();
+    
+  });
+});
 
-
-
+// $("#formOne").submit(function(event) {
+    
+//   let items = ["item1","item2", "item3", "item4" ,"item5" ,"item6"];
+//   items.forEach(function(input) {
+//     let listItems =  $("input#" + input).val();
+//     $("#groceries").append("<li>" + listItems + "</li>");
 
 // const array = [0,1,2,3,4,5];
 // let doubledArray = [];
